@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  .side-bar {
+    height: 100vh;
+    width: 300px;
+      &__user-name {
+        height: 100px;
+        background-color: #253141;
+        position: relative;
+          .top-items {
+            height: 20px;
+            width: 260px;
+            line-height: 20px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            color: #ffffff bold;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            
+            &__name {
+              color: #ffffff;
+              font-size: 16px;
+            }
+            &__icons {
+              width: 60px;
+              display: flex;
+              justify-content: flex-end;
+                .fa-edit {
+                  color: #ffffff;
+                }
+                .fa-cog {
+                  color: #ffffff;
+                  margin-left: 5px;
+                }
+            }
+          }
+      }
+      &__group-list {
+        height: calc(100vh - 100px);
+        background-color: #2f3e51;
+          .list-items {
+            color: #ffffff;
+            &__name {
+              font-size: 15px;
+              padding: 20px 20px 5px;
+            }
+            &__message {
+              font-size: 11px;
+              padding: 0 20px 40px;
+            }
+          }
+      }
+  }
+
+  .chat-main {
+    height: 100vh;
+    width: calc(100vw - 300px);
+      &__group-info {
+        height: 100px;
+        background-color: #ffffff;
+        border: #eeeeee;
+        display: flex;
+        justify-content: space-between;
+          .left-info {
+            
+            &__group-name {
+              font-size: 20px;
+              color: #333333;
+              padding: 35px 0 15px 40px;
+            }
+            &__group-member {
+              font-size: 12px;
+              color: #999999;
+              padding: 0 0 0 40px;
+            }
+          }
+          .right-info {
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px 0;
+            margin-top: 28px;
+            margin-right: 40px;
+            border: 1px solid #38aef0;
+              .Edit__btn {
+                color: #38aef0;
+                text-decoration: none;
+              }
+          }
+      }
+
+      &__message-list {
+        height: calc(100vh - 100px - 90px);
+        background-color: #fafafa;
+          .message-lists {
+            &__title {
+              padding: 35px 0 12px 40px;
+              
+              display: flex;
+              justify-content: space-between;
+                &__user {
+                  color: #333333;
+                  font-size: 16px;
+                }
+                &__day {
+                  color: #999999;
+                  font-size: 12px;
+                }
+            }
+            &__comment {
+              padding: 0 0 46px 40px;
+              color: #434A54;
+              font-size: 14px;
+            }
+          }
+      }
+      
+      &__message-form {
+        height: 90px;
+        padding: 20px 40px;
+        background-color: #d2d2d2;
+        display: flex;
+          .input-box {
+            width: 100%;
+            position: relative;
+              &__text {
+                height: 50px;
+                width: 100%;
+                padding: 0 40px 0 10px;
+              }
+              &__image {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 1.3rem;
+                  i.fa.fa-image {
+                  }
+              }
+          }
+          .submit-btn {
+            height: 50px;
+            width: 100px;
+            margin-left: 15px;
+            color: #ffffff;
+            background-color: #38aef0;
+          }
+      }
+  }
+}

@@ -1,0 +1,36 @@
+.chat-main
+  .chat-main__group-info
+    .left-info
+      .left-info__group-name
+        test
+      .left-info__group-member
+        member:masa
+    .right-info
+      = link_to "#", class: "Edit__btn" do
+        Edit
+  .chat-main__message-list
+    .message-lists
+      .message-lists__title
+        .message-lists__title__user
+          masa
+        .message-lists__title__day
+          2019/11/20(wed)17:43:01
+      .message-lists__comment
+        おはよう！
+
+    .message-lists
+      .message-lists__title
+        .message-lists__title__user
+          masa
+        .message-lists__title__day
+          2019/11/20(wed)17:43:34
+      .message-lists__comment
+        おはよう！
+
+  .chat-main__message-form
+    .input-box
+      %input{class: "input-box__text", placeholder: "type a message", type: "text"}
+      %label{class: "input-box__image"}
+        %i{class: "far fa-image"}
+        %input{type: "file", style: "display:none;"}
+    %input{type: "submit", class: "submit-btn", value: "send"}
