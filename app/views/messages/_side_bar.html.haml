@@ -4,7 +4,7 @@
       .top-items__name
         = current_user.name
       .top-items__icons
-        = link_to "#" do
+        = link_to new_group_path do
           %i{class:"far fa-edit"}
         = link_to edit_user_path(current_user) do
           %i{class:"fas fa-cog"}
