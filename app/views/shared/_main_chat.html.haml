@@ -29,8 +29,9 @@
 
   .chat-main__message-form
     .input-box
-      %input{class: "input-box__text", placeholder: "type a message", type: "text"}
-      %label{class: "input-box__image"}
-        %i{class: "far fa-image"}
-        %input{type: "file", style: "display:none;"}
-    %input{type: "submit", class: "submit-btn", value: "send"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          %i{class: "far fa-image"}
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'submit-btn'
