@@ -8,29 +8,14 @@
     .right-info
       = link_to "#", class: "Edit__btn" do
         Edit
-  .chat-main__message-list
-    .message-lists
-      .message-lists__title
-        .message-lists__title__user
-          masa
-        .message-lists__title__day
-          2019/11/20(wed)17:43:01
-      .message-lists__comment
-        おはよう！
-
-    .message-lists
-      .message-lists__title
-        .message-lists__title__user
-          masa
-        .message-lists__title__day
-          2019/11/20(wed)17:43:34
-      .message-lists__comment
-        おはよう！
+  .chat-main__message-lists
+    = render @messages
 
   .chat-main__message-form
-    .input-box
-      %input{class: "input-box__text", placeholder: "type a message", type: "text"}
-      %label{class: "input-box__image"}
-        %i{class: "far fa-image"}
-        %input{type: "file", style: "display:none;"}
-    %input{type: "submit", class: "submit-btn", value: "send"}
+    = form_for([@group, @message], html: {class: 'input-box'}) do |f|
+      .input-box__bar
+        = f.text_field :content, class: 'input-box__bar__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__bar__image' do
+          %i{class: "far fa-image"}
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'submit-btn'
