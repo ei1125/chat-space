@@ -8,7 +8,7 @@
         - @group.users.each do |members|
           = members[:name]
     .right-info
-      = link_to "#", class: "Edit__btn" do
+      = link_to edit_group_path(@group), class: "Edit__btn" do
         Edit
   .chat-main__message-lists
     = render @messages
