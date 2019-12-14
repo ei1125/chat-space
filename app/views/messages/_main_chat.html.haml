@@ -2,9 +2,11 @@
   .chat-main__group-info
     .left-info
       .left-info__group-name
-        test
+        = @group.name
       .left-info__group-member
-        member:masa
+        Member:
+        - @group.users.each do |members|
+          = members[:name]
     .right-info
       = link_to "#", class: "Edit__btn" do
         Edit
