@@ -48,6 +48,7 @@
     &__group-list {
       height: calc(100vh - 100px);
       background-color: #2f3e51;
+      overflow: scroll;
       .list-items {
         &__groups {
           box-sizing: border-box;
@@ -107,6 +108,7 @@
       box-sizing: border-box;
       height: calc(100vh - 100px - 90px);
       background-color: #fafafa;
+      overflow: scroll;
       .message-list {
         &__title {
           padding: 35px 0 12px 40px;
