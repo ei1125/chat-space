@@ -47,7 +47,6 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.chat-main__message-lists').append(html);
-      console.log($('.message-list__comment')[0].scrollHeight);
       $('.chat-main__message-lists').animate({ scrollTop: $('.chat-main__message-lists')[0].scrollHeight});
       $('#new_message')[0].reset();
       $('.submit-btn').prop('disabled', false);
