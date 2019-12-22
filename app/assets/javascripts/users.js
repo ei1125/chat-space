@@ -67,4 +67,7 @@ $(function() {
     addDeleteUser(userName, userId);  //チャットメンバーに削除したユーザーを追加
     addMember(userId);
   });
+  $(document).on("click", ".chat-group-user__btn--remove", function() {
+    $(this).parent().remove();
+  });
 });
