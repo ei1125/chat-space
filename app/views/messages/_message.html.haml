@@ -1,11 +1,12 @@
-.message-list__title
-  .message-list__title__user
-    = message.user.name
-  .message-list__title__day
-    = message.created_at.strftime("%Y/%m/%d %H:%M")
-.message-list__comment
-  - if message.content.present?
-    %p.message-list__comment__content
-      = message.content
-  = image_tag message.image.url, class: 'message-list__comment__image' if message.image.present?
+.message{data: {message: {id: message.id}}}
+  .message-list__title
+    .message-list__title__user
+      = message.user.name
+    .message-list__title__day
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .message-list__comment
+    - if message.content.present?
+      %p.message-list__comment__content
+        = message.content
+    = image_tag message.image.url, class: 'message-list__comment__image' if message.image.present?
   
