@@ -28,7 +28,7 @@ $(function(){
       }
     })
     .fail(function() {
-      console.log('error');
+      alert("メッセージ送信に失敗しました");
     });
   };
 
@@ -40,14 +40,14 @@ $(function(){
                         ${message.user_name}
                       </div>
                       <div class="message-list__title__day">
-                        ${message.created_at.strftime("%Y/%m/%d %H:%M")}
+                        ${message.created_at}
                       </div>
                     </div>
                     <div class="message-list__comment">
                       <p class="message-list__comment__content">
                         ${message.content}
                       </p>
-                      <img class="message-list__comment__image" src="${message.image.url}">
+                      <img class="message-list__comment__image" src="${message.image}">
                     </div>
                   </div>`
     } else {
