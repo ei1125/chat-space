@@ -34,13 +34,13 @@ $(function(){
 
   function buildHTML(message){
     if (message.image) {
-      var html = `<div class="message" data-message-id= message.id >
+      var html = `<div class="message" data-message-id= ${message.id} >
                     <div class="message-list__title">
                       <div class="message-list__title__user">
                         ${message.user_name}
                       </div>
                       <div class="message-list__title__day">
-                        ${message.created_at}
+                        ${message.created_at.strftime("%Y/%m/%d %H:%M")}
                       </div>
                     </div>
                     <div class="message-list__comment">
@@ -51,7 +51,7 @@ $(function(){
                     </div>
                   </div>`
     } else {
-      var html = `<div class="message" data-message-id= message.id >
+      var html = `<div class="message" data-message-id= ${message.id} >
                     <div class="message-list__title">
                       <div class="message-list__title__user">
                         ${message.user_name}
@@ -92,7 +92,7 @@ $(function(){
       alert("メッセージ送信に失敗しました");
     });
   })
-  
+
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
   }
