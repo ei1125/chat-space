@@ -1,3 +1,5 @@
+マスター
+
 ## chatsテーブル
 
 |Column|Type|Options|
